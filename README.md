@@ -77,7 +77,6 @@ Przy dostatecznej szerokości `basic_automerge`, `ai_automerge_simple` i `ai_aut
 Powtarzające się bezpośrednio po sobie operacje o tym samym wyniku zajmują jeden wiersz z licznikiem, np. `git fetch --prune origin... DONE (x3)`. Widok logu pokazuje siedem ostatnich wpisów. Udane dodanie, zmiana i usunięcie trackingu również trafiają do tej sekcji.
 
 
-
 ### Ważne ostrzeżenie dotyczące `git` i `com`
 
 Zgodnie ze specyfikacją tekst po `git` i `com` trafia do `bash -lc`, więc obsługuje `&&`, potoki, przekierowania i inne elementy składni powłoki. Te komendy mają pełne uprawnienia użytkownika uruchamiającego skrypt. Nie wklejaj do nich niezaufanej treści. Przykładowo `git reset --hard && git clean -f -d` naprawdę wykona obie destrukcyjne operacje w `workdir`.
@@ -207,3 +206,4 @@ Developed and maintained by RamsSoft Andrzej Janczak usługi IT.
 ## Licencja
 
 Projekt jest udostępniany na licencji MIT. Szczegóły znajdują się w pliku `LICENSE`.
+
