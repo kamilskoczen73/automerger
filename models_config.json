@@ -1,0 +1,266 @@
+{
+  "available_models": {
+    "codex-like": {
+      "codex-gpt-5.6-luna": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "codex-gpt-5.6-sol": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max",
+        "ultra"
+      ],
+      "codex-gpt-5.6-terra": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max",
+        "ultra"
+      ]
+    },
+    "claude-like": {
+      "claude-fable": [
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "claude-haiku": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "claude-opus": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "claude-sonnet": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ]
+    },
+    "openhands-vllm-like": {
+      "openhands-hosted_vllm-qwen36-long": [
+        "high"
+      ]
+    },
+    "other": {}
+  },
+  "model_commands": {
+    "codex-gpt-5.6-sol-medium": "codex exec --model gpt-5.6-sol --config model_reasoning_effort=\\\"medium\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-terra-medium": "codex exec --model gpt-5.6-terra --config model_reasoning_effort=\\\"medium\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-luna-medium": "codex exec --model gpt-5.6-luna --config model_reasoning_effort=\\\"medium\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.5-high": "codex exec --model gpt-5.5 --config model_reasoning_effort=\\\"high\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.4-xhigh": "codex exec --model gpt-5.4 --config model_reasoning_effort=\\\"xhigh\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.4-high": "codex exec --model gpt-5.4 --config model_reasoning_effort=\\\"high\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.4-medium": "codex exec --model gpt-5.4 --config model_reasoning_effort=\\\"medium\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.4-low": "codex exec --model gpt-5.4 --config model_reasoning_effort=\\\"low\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "claude-fable-medium": "claude --model fable --effort medium --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-haiku-medium": "claude --model haiku --effort medium --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-opus-medium": "claude --model opus --effort medium --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-sonnet-medium": "claude --model sonnet --effort medium --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "openhands-hosted_vllm-qwen36-long-high": "OPENHANDS_SUPPRESS_BANNER=1 OPENHANDS_CONVERSATIONS_DIR={{MODEL_SESSION_DIR}} LLM_MODEL=hosted_vllm/qwen36-long LLM_REASONING_EFFORT=high openhands --headless --always-approve --exit-without-confirmation --override-with-envs -t {{PROMPT}}",
+    "codex-gpt-5.6-luna-low": "codex exec --model gpt-5.6-luna --config model_reasoning_effort=\\\"low\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-luna-high": "codex exec --model gpt-5.6-luna --config model_reasoning_effort=\\\"high\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-luna-xhigh": "codex exec --model gpt-5.6-luna --config model_reasoning_effort=\\\"xhigh\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-luna-max": "codex exec --model gpt-5.6-luna --config model_reasoning_effort=\\\"max\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-sol-low": "codex exec --model gpt-5.6-sol --config model_reasoning_effort=\\\"low\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-sol-high": "codex exec --model gpt-5.6-sol --config model_reasoning_effort=\\\"high\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-sol-xhigh": "codex exec --model gpt-5.6-sol --config model_reasoning_effort=\\\"xhigh\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-sol-max": "codex exec --model gpt-5.6-sol --config model_reasoning_effort=\\\"max\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-sol-ultra": "codex exec --model gpt-5.6-sol --config model_reasoning_effort=\\\"ultra\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-terra-low": "codex exec --model gpt-5.6-terra --config model_reasoning_effort=\\\"low\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-terra-high": "codex exec --model gpt-5.6-terra --config model_reasoning_effort=\\\"high\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-terra-xhigh": "codex exec --model gpt-5.6-terra --config model_reasoning_effort=\\\"xhigh\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-terra-max": "codex exec --model gpt-5.6-terra --config model_reasoning_effort=\\\"max\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "codex-gpt-5.6-terra-ultra": "codex exec --model gpt-5.6-terra --config model_reasoning_effort=\\\"ultra\\\" --config approval_policy=\\\"never\\\" --sandbox danger-full-access --ephemeral {{PROMPT}}",
+    "claude-fable-high": "claude --model fable --effort high --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-fable-xhigh": "claude --model fable --effort xhigh --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-fable-max": "claude --model fable --effort max --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-haiku-low": "claude --model haiku --effort low --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-haiku-high": "claude --model haiku --effort high --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-haiku-xhigh": "claude --model haiku --effort xhigh --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-haiku-max": "claude --model haiku --effort max --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-opus-low": "claude --model opus --effort low --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-opus-high": "claude --model opus --effort high --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-opus-xhigh": "claude --model opus --effort xhigh --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-sonnet-low": "claude --model sonnet --effort low --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-sonnet-high": "claude --model sonnet --effort high --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}",
+    "claude-sonnet-xhigh": "claude --model sonnet --effort xhigh --permission-mode acceptEdits --no-session-persistence --disable-slash-commands --tools \"Read,Edit,Glob,Grep\" --disallowedTools \"Bash,WebFetch,WebSearch,NotebookEdit\" --append-system-prompt \"$(cat {{PROMPT_FILE}})\" -p {{PROMPT}}"
+  },
+  "model_close_commands": {
+    "codex-gpt-5.6-sol-medium": "true",
+    "codex-gpt-5.6-terra-medium": "true",
+    "codex-gpt-5.6-luna-medium": "true",
+    "codex-gpt-5.5-high": "true",
+    "codex-gpt-5.4-xhigh": "true",
+    "codex-gpt-5.4-medium": "true",
+    "claude-fable-medium": "true",
+    "claude-haiku-medium": "true",
+    "claude-opus-medium": "true",
+    "claude-sonnet-medium": "true",
+    "openhands-hosted_vllm-qwen36-long-high": "rm -rf -- {{MODEL_SESSION_DIR}}",
+    "codex-gpt-5.6-luna-low": "true",
+    "codex-gpt-5.6-luna-high": "true",
+    "codex-gpt-5.6-luna-xhigh": "true",
+    "codex-gpt-5.6-luna-max": "true",
+    "codex-gpt-5.6-sol-low": "true",
+    "codex-gpt-5.6-sol-high": "true",
+    "codex-gpt-5.6-sol-xhigh": "true",
+    "codex-gpt-5.6-sol-max": "true",
+    "codex-gpt-5.6-sol-ultra": "true",
+    "codex-gpt-5.6-terra-low": "true",
+    "codex-gpt-5.6-terra-high": "true",
+    "codex-gpt-5.6-terra-xhigh": "true",
+    "codex-gpt-5.6-terra-max": "true",
+    "codex-gpt-5.6-terra-ultra": "true",
+    "claude-fable-high": "true",
+    "claude-fable-xhigh": "true",
+    "claude-fable-max": "true",
+    "claude-haiku-low": "true",
+    "claude-haiku-high": "true",
+    "claude-haiku-xhigh": "true",
+    "claude-haiku-max": "true",
+    "claude-opus-low": "true",
+    "claude-opus-high": "true",
+    "claude-opus-xhigh": "true",
+    "claude-sonnet-low": "true",
+    "claude-sonnet-high": "true",
+    "claude-sonnet-xhigh": "true"
+  },
+  "models": {
+    "openhands-hosted_vllm-qwen36-long-high": {
+      "max_working_time": 300,
+      "max_attempts": 2,
+      "ai_automerge_simple": {
+        "max_working_time": 180,
+        "max_attempts": 2
+      },
+      "ai_automerge_all": {
+        "max_working_time": 900,
+        "max_attempts": 2
+      },
+      "title_maker": {
+        "max_working_time": 220,
+        "max_attempts": 3
+      },
+      "ask": {
+        "max_working_time": 180,
+        "max_attempts": 2
+      },
+      "autorepair": {
+        "max_working_time": 900,
+        "max_attempts": 2
+      }
+    },
+    "claude-haiku-medium": {
+      "max_working_time": 300,
+      "max_attempts": 2,
+      "ai_automerge_simple": {
+        "max_working_time": 120,
+        "max_attempts": 2
+      },
+      "title_maker": {
+        "max_working_time": 90,
+        "max_attempts": 2
+      },
+      "ask": {
+        "max_working_time": 120,
+        "max_attempts": 2
+      }
+    },
+    "claude-sonnet-low": {
+      "max_working_time": 300,
+      "max_attempts": 2,
+      "ai_automerge_simple": {
+        "max_working_time": 300,
+        "max_attempts": 2
+      },
+      "title_maker": {
+        "max_working_time": 180,
+        "max_attempts": 2
+      },
+      "ask": {
+        "max_working_time": 120,
+        "max_attempts": 2
+      }
+    },
+    "codex-gpt-5.6-luna-medium": {
+      "max_working_time": 300,
+      "max_attempts": 2,
+      "ai_automerge_simple": {
+        "max_working_time": 90,
+        "max_attempts": 2
+      },
+      "title_maker": {
+        "max_working_time": 120,
+        "max_attempts": 2
+      },
+      "ask": {
+        "max_working_time": 180,
+        "max_attempts": 2
+      }
+    },
+    "codex-gpt-5.6-terra-high": {
+      "max_working_time": 300,
+      "max_attempts": 2,
+      "ai_automerge_simple": {
+        "max_working_time": 300,
+        "max_attempts": 2
+      },
+      "ai_automerge_all": {
+        "max_working_time": 600,
+        "max_attempts": 2
+      },
+      "autorepair": {
+        "max_working_time": 600,
+        "max_attempts": 2
+      }
+    },
+    "claude-sonnet-medium": {
+      "max_working_time": 300,
+      "max_attempts": 2,
+      "ai_automerge_all": {
+        "max_working_time": 300,
+        "max_attempts": 2
+      },
+      "autorepair": {
+        "max_working_time": 600,
+        "max_attempts": 2
+      }
+    },
+    "codex-gpt-5.6-terra-xhigh": {
+      "max_working_time": 300,
+      "max_attempts": 2,
+      "ai_automerge_all": {
+        "max_working_time": 600,
+        "max_attempts": 2
+      }
+    },
+    "claude-opus-medium": {
+      "max_working_time": 300,
+      "max_attempts": 2,
+      "ai_automerge_all": {
+        "max_working_time": 600,
+        "max_attempts": 1
+      },
+      "autorepair": {
+        "max_working_time": 600,
+        "max_attempts": 1
+      }
+    }
+  }
+}

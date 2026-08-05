@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "workdir": "/absolute/path/to/project",
+  "remote": "origin",
+  "target_branch": "main",
+  "ui_refresh_ms": 500,
+  "merge_cooldown_time_m_default": 210,
+  "min_time_between_merges_m": 5,
+  "model_max_working_time_s_default": 300,
+  "fetch_interval_seconds": 3600,
+  "merge_without_conflicts_default": false,
+  "model_max_attempts_default": 2,
+  "push_after_merge": false,
+  "git_user_name": "Automerger",
+  "git_user_email": "automerger@example.com",
+  "show_titles_in_main_view": true,
+  "github_access_token_encrypted": null,
+  "model_logs_retention_days": 30,
+  "default_branch_prefix": "feature/",
+  "autoresolve_files_list": [
+    "tests/*"
+  ],
+  "automerge_all_models": [
+    "claude-opus-medium",
+    "codex-gpt-5.4-high",
+    "claude-sonnet-medium",
+    "openhands-hosted_vllm-qwen36-long-high"
+  ],
+  "automerge_simple_models": [
+    "openhands-hosted_vllm-qwen36-long-high",
+    "claude-haiku-medium",
+    "claude-sonnet-medium",
+    "codex-gpt-5.4-low"
+  ],
+  "title_maker_models": [
+    "openhands-hosted_vllm-qwen36-long-high",
+    "claude-haiku-medium",
+    "claude-sonnet-medium",
+    "codex-gpt-5.4-low"
+  ],
+  "ask_models": [
+    "openhands-hosted_vllm-qwen36-long-high",
+    "claude-haiku-medium",
+    "claude-sonnet-medium",
+    "codex-gpt-5.4-medium"
+  ],
+  "autorepair_models": [
+    "claude-sonnet-medium",
+    "claude-opus-medium",
+    "codex-gpt-5.4-high",
+    "openhands-hosted_vllm-qwen36-long-high"
+  ],
+  "prompt_file": "prompt.md",
+  "models_config_file": "models_config.json",
+  "branches_config_file": "branches_config.json"
+}
